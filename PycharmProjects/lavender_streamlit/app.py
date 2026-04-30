@@ -35,68 +35,56 @@ st.markdown(
         background-attachment: fixed;
     }
     
-    .product-card {
-        background: rgba(255, 255, 255, 0.92);
-        color: #2d123d;
-        border-radius: 18px;
-        padding: 18px;
-        min-height: 450px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-        border: 1px solid rgba(255,255,255,0.4);
-    }
-    
-    .text-box {
-        border: 1px solid rgba(255,255,255,0.7);
-        background: rgba(255,255,255,0.85); /*schimbare importantă */
-        color: #2d123d;
-        border-radius: 10px;
-        padding: 10px;
-        margin-top: 8px;
-    }
+.product-title {
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-top: 10px;
+}
 
-    .text-box {
+.text-box {
+    border: 1px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.88);
+    color: #2d123d;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 8px;
+    line-height: 1.55;
+    font-weight: 500;
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); /* pentru mobile */
-    }
+    -webkit-backdrop-filter: blur(5px);
+}
 
-    @media (max-width: 768px) {
+.price-box {
+    border: 2px solid white;
+    background: rgba(255,255,255,0.92);
+    color: #2d123d;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 8px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.price-box:hover {
+    box-shadow: 0 0 10px white;
+}
+
+@media (max-width: 768px) {
     .text-box {
-        background: rgba(255,255,255,0.95); /* mai solid pe mobil */
+        background: rgba(255,255,255,0.96);
         font-size: 16px;
     }
 
-    .product-title {
-    color: white;
-    }
-
     .price-box {
+        background: rgba(255,255,255,0.98);
         font-size: 18px;
     }
-    
-    .price-box {
-        border: 2px solid white;
-        border-radius: 10px;
-        padding: 6px;
-        margin-top: 6px;
-        font-weight: bold;
-        text-align: center;
-    }
-    
-    .price-box:hover {
-        box-shadow: 0 0 10px white;
-    }
-    
+
     .product-title {
-        font-size: 1.05rem;
-        font-weight: 800;
-        margin-top: 10px;
+        font-size: 20px;
     }
-    
-    .price {
-        font-size: 1.2rem;
-        font-weight: 800;
-        color: #6B00B0;
-    }
+}
     
     .small-muted {
         color: #5d4a68;
