@@ -157,13 +157,74 @@ st.markdown(
             padding: 14px;
         }
     }
+
+        /* Force readable text on main page */
+    [data-testid="stAppViewContainer"] h1,
+    [data-testid="stAppViewContainer"] h2,
+    [data-testid="stAppViewContainer"] h3,
+    [data-testid="stAppViewContainer"] p,
+    [data-testid="stAppViewContainer"] div {
+        color: white;
+    }
+    
+    /* Product boxes keep dark text */
+    .text-box,
+    .text-box *,
+    .price-box,
+    .price-box * {
+        color: #2d123d !important;
+    }
+    
+    /* Better mobile spacing */
+    @media (max-width: 768px) {
+        .block-container {
+            padding-top: 2rem;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+        }
+    
+        h1 {
+            font-size: 38px !important;
+            line-height: 1.1 !important;
+            text-align: left !important;
+            color: white !important;
+        }
+    
+        h2, h3 {
+            color: white !important;
+        }
+    
+        [data-testid="stMarkdownContainer"] p {
+            color: white !important;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    
+        img {
+            max-height: 420px;
+            object-fit: cover;
+        }
+    }
+
+    .hero-title {
+    color: white !important;
+    font-size: 48px;
+    font-weight: 900;
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 40px !important;
+            line-height: 1.1;
+        }
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-st.title("💜 Lavender Shop")
-st.caption("Comenzile se plasează doar prin apel telefonic. Verifică numărul de telefon in postarea de pe Facebook. Vă mulțumim pentru înțelegere.")
+st.markdown('<h1 class="hero-title">💜 GOGOȘU Lavender Shop</h1>', unsafe_allow_html=True)
+st.caption("Comenzile se plasează doar prin apel telefonic. Verificați numărul de telefon în postarea de pe Facebook. Vă mulțumim pentru înțelegere.")
 
 with st.sidebar:
     st.header("Căutare și filtrare")
