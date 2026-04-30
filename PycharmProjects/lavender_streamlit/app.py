@@ -96,22 +96,32 @@ st.markdown(
     
     /* Streamlit buttons */
     .stButton > button {
-        background: linear-gradient(135deg, #ffffff, #ead5ff);
-        color: #4b006e;
-        border: none;
-        border-radius: 14px;
-        padding: 12px 24px;
-        font-weight: 900;
-        font-size: 16px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        transition: all 0.25s ease;
+        background: linear-gradient(135deg, #ffffff, #ead5ff) !important;
+        color: #4b006e !important;
+        border: none !important;
+        border-radius: 14px !important;
+        padding: 12px 24px !important;
+        font-weight: 900 !important;
+        font-size: 16px !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
+        transition: all 0.25s ease !important;
     }
     
+    /* Force button text color */
+    .stButton > button * {
+        color: #4b006e !important;
+    }
+    
+    /* Hover */
     .stButton > button:hover {
         transform: translateY(-2px);
-        background: white;
-        color: #6B00B0;
-        box-shadow: 0 12px 26px rgba(0,0,0,0.32);
+        background: white !important;
+        color: #6B00B0 !important;
+        box-shadow: 0 12px 26px rgba(0,0,0,0.32) !important;
+    }
+    
+    .stButton > button:hover * {
+        color: #6B00B0 !important;
     }
     
     /* Sidebar */
