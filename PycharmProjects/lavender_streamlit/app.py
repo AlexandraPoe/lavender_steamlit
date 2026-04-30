@@ -42,7 +42,7 @@ st.markdown(
         min-height: 450px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.18);
         border: 1px solid rgba(255,255,255,0.4);
-        
+     }   
         .text-box {
             border: 1px solid rgba(255,255,255,0.7);
             background: rgba(255,255,255,0.15);
@@ -60,7 +60,7 @@ st.markdown(
         .price-box:hover {
         box-shadow: 0 0 10px white;
         }
-    }
+        
     .product-title {font-size: 1.05rem; font-weight: 800; margin-top: 10px;}
     .price {font-size: 1.2rem; font-weight: 800; color: #6B00B0;}
     .small-muted {color: #5d4a68; font-size: 0.92rem; min-height: 48px;}
