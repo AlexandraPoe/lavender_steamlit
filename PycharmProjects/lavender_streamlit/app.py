@@ -47,11 +47,30 @@ st.markdown(
     
     .text-box {
         border: 1px solid rgba(255,255,255,0.7);
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(5px);
+        background: rgba(255,255,255,0.85); /*schimbare importantă */
+        color: #2d123d;
         border-radius: 10px;
-        padding: 8px;
+        padding: 10px;
         margin-top: 8px;
+    }
+
+    .text-box {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* pentru mobile */
+    }
+
+    @media (max-width: 768px) {
+    .text-box {
+        background: rgba(255,255,255,0.95); /* mai solid pe mobil */
+        font-size: 16px;
+    }
+
+    .product-title {
+    color: white;
+    }
+
+    .price-box {
+        font-size: 18px;
     }
     
     .price-box {
