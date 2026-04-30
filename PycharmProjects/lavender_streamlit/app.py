@@ -12,7 +12,7 @@ PRODUCTS = [
         "description": (
             "Ulei de levănțică natural, puternic aromat, bio pentru o stare de bine. "
             "Obținut din culturi ECO de lavandă prin distilare în Comuna Gogoșu. "
-            "Miros puternic, terapeutic."
+            "Puternic fragrant, terapeutic."
         ),
         "price": 35,
         "image": "essential-oil-lavender.png",
