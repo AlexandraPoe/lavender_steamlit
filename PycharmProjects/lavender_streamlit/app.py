@@ -34,6 +34,7 @@ st.markdown(
         background-size: cover;
         background-attachment: fixed;
     }
+    
     .product-card {
         background: rgba(255, 255, 255, 0.92);
         color: #2d123d;
@@ -42,28 +43,47 @@ st.markdown(
         min-height: 450px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.18);
         border: 1px solid rgba(255,255,255,0.4);
-     }   
-        .text-box {
-            border: 1px solid rgba(255,255,255,0.7);
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(5px);
-        }
-
-        .price-box {
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 6px;
-            margin-top: 6px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .price-box:hover {
+    }
+    
+    .text-box {
+        border: 1px solid rgba(255,255,255,0.7);
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 8px;
+        margin-top: 8px;
+    }
+    
+    .price-box {
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 6px;
+        margin-top: 6px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .price-box:hover {
         box-shadow: 0 0 10px white;
-        }
-        
-    .product-title {font-size: 1.05rem; font-weight: 800; margin-top: 10px;}
-    .price {font-size: 1.2rem; font-weight: 800; color: #6B00B0;}
-    .small-muted {color: #5d4a68; font-size: 0.92rem; min-height: 48px;}
+    }
+    
+    .product-title {
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin-top: 10px;
+    }
+    
+    .price {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #6B00B0;
+    }
+    
+    .small-muted {
+        color: #5d4a68;
+        font-size: 0.92rem;
+        min-height: 48px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
