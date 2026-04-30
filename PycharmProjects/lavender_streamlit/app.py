@@ -132,6 +132,40 @@ st.markdown(
     section[data-testid="stSidebar"] * {
         color: white;
     }
+
+    /* Mobile/touch button states fix */
+    .stButton > button:active,
+    .stButton > button:focus,
+    .stButton > button:focus-visible {
+        background: linear-gradient(135deg, #ffffff, #ead5ff) !important;
+        color: #4b006e !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
+    }
+    
+    .stButton > button:active *,
+    .stButton > button:focus *,
+    .stButton > button:focus-visible * {
+        color: #4b006e !important;
+    }
+    
+    /* Prevent mobile tap highlight */
+    .stButton > button {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+    .stButton > button:hover {
+        transform: none !important;
+        background: linear-gradient(135deg, #ffffff, #ead5ff) !important;
+        color: #4b006e !important;
+    }
+
+    .stButton > button:hover * {
+        color: #4b006e !important;
+    }
+    }
     
     /* Mobile */
     @media (max-width: 768px) {
