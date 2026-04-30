@@ -29,67 +29,133 @@ st.markdown(
     """
     <style>
     .stApp {
-        background: linear-gradient(rgba(80, 0, 120, 0.80), rgba(80, 0, 120, 0.80)),
+        background: linear-gradient(rgba(72, 0, 110, 0.82), rgba(72, 0, 110, 0.82)),
                     url('https://www.creativefabrica.com/wp-content/uploads/2023/08/25/French-Impressionist-Painting-In-Monet-Style-Of-Lavender-Fields-77673167-1.png');
         background-size: cover;
+        background-position: center;
         background-attachment: fixed;
     }
     
-.product-title {
-    color: white;
-    font-size: 1.05rem;
-    font-weight: 800;
-    margin-top: 10px;
-}
-
-.text-box {
-    border: 1px solid rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.88);
-    color: #2d123d;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 8px;
-    line-height: 1.55;
-    font-weight: 500;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
-.price-box {
-    border: 2px solid white;
-    background: rgba(255,255,255,0.92);
-    color: #2d123d;
-    border-radius: 10px;
-    padding: 8px;
-    margin-top: 8px;
-    font-weight: 800;
-    text-align: center;
-}
-
-.price-box:hover {
-    box-shadow: 0 0 10px white;
-}
-
-@media (max-width: 768px) {
-    .text-box {
-        background: rgba(255,255,255,0.96);
-        font-size: 16px;
+    /* Main title */
+    h1 {
+        font-size: 46px !important;
+        font-weight: 900 !important;
+        color: white !important;
+        margin-bottom: 8px !important;
     }
-
-    .price-box {
-        background: rgba(255,255,255,0.98);
-        font-size: 18px;
-    }
-
-    .product-title {
-        font-size: 20px;
-    }
-}
     
-    .small-muted {
-        color: #5d4a68;
-        font-size: 0.92rem;
-        min-height: 48px;
+    /* Product image */
+    img {
+        border-radius: 18px;
+        box-shadow: 0 14px 35px rgba(0,0,0,0.30);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    
+    img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.38);
+    }
+    
+    /* Product title */
+    .product-title {
+        color: white;
+        font-size: 22px;
+        font-weight: 900;
+        margin-top: 18px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+    
+    /* Product description */
+    .text-box {
+        border: 1px solid rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.94);
+        color: #2d123d;
+        border-radius: 16px;
+        padding: 16px;
+        margin-top: 10px;
+        line-height: 1.65;
+        font-weight: 500;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.20);
+    }
+    
+    /* Price */
+    .price-box {
+        border: 2px solid white;
+        background: linear-gradient(135deg, #ffffff, #f0ddff);
+        color: #5a007f;
+        border-radius: 16px;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 12px;
+        font-size: 20px;
+        font-weight: 900;
+        text-align: center;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+    }
+    
+    /* Streamlit buttons */
+    .stButton > button {
+        background: linear-gradient(135deg, #ffffff, #ead5ff);
+        color: #4b006e;
+        border: none;
+        border-radius: 14px;
+        padding: 12px 24px;
+        font-weight: 900;
+        font-size: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        transition: all 0.25s ease;
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        background: white;
+        color: #6B00B0;
+        box-shadow: 0 12px 26px rgba(0,0,0,0.32);
+    }
+    
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background: #24172f;
+    }
+    
+    section[data-testid="stSidebar"] * {
+        color: white;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+        .stApp {
+            background-attachment: scroll;
+        }
+    
+        h1 {
+            font-size: 34px !important;
+            text-align: center;
+        }
+    
+        .product-title {
+            font-size: 22px;
+            text-align: left;
+            color: white;
+        }
+    
+        .text-box {
+            font-size: 17px;
+            background: rgba(255,255,255,0.97);
+            padding: 18px;
+        }
+    
+        .price-box {
+            font-size: 21px;
+            padding: 14px;
+        }
+    
+        .stButton > button {
+            width: 100%;
+            font-size: 18px;
+            padding: 14px;
+        }
     }
     </style>
     """,
@@ -168,7 +234,12 @@ for category in categories:
             image_path = ASSET_DIR / product["image"]
             if image_path.exists():
                 st.image(str(image_path), use_container_width=True)
-            st.markdown(f'<div class="product-title">{product["name"]}</div>', unsafe_allow_html=True)
+                
+            st.markdown(
+                f'<div class="product-title">{product["name"]}</div>',
+                unsafe_allow_html=True
+            )
+            
             st.markdown(
                 f'<div class="text-box">{product["description"]}</div>',
                 unsafe_allow_html=True
@@ -178,6 +249,7 @@ for category in categories:
                 f'<div class="price-box">{product["price"]} RON</div>',
                 unsafe_allow_html=True
             )
+            
             if st.button("Cumpără", key=f"add_{product['id']}"):
                 st.session_state.cart[product["id"]] = st.session_state.cart.get(product["id"], 0) + 1
                 st.toast(f"Produsul {product['name']} a fost adăugat în coș")
