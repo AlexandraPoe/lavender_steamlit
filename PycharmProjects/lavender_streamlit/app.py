@@ -244,7 +244,7 @@ with st.sidebar:
             product = next(p for p in PRODUCTS if p["id"] == product_id)
             line_total = product["price"] * qty
             total += line_total
-            st.write(f"**{product['name']}**")
+            st.markdown(f"**{product['name']}**")
             st.write(f"RON {product['price']} × {qty} = **RON {line_total}**")
             new_qty = st.number_input(
                 f"Quantity for {product['name']}", min_value=1, max_value=99, value=qty, key=f"qty_{product_id}", label_visibility="collapsed"
