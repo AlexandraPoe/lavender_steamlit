@@ -2,7 +2,6 @@ from pathlib import Path
 import streamlit as st
 
 st.set_page_config(page_title="Lavender Shop", page_icon="💜", layout="wide")
-
 ASSET_DIR = Path(__file__).parent / "assets"
 
 PRODUCTS = [
@@ -206,8 +205,7 @@ st.markdown(
     [data-testid="stAppViewContainer"] h1,
     [data-testid="stAppViewContainer"] h2,
     [data-testid="stAppViewContainer"] h3,
-    [data-testid="stAppViewContainer"] p,
-    [data-testid="stAppViewContainer"] div {
+    [data-testid="stAppViewContainer"] p {
         color: white;
     }
     
